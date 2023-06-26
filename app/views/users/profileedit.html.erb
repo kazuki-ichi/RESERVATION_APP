@@ -1,0 +1,30 @@
+<h2>プロフィール編集</h2>
+
+<%= form_with model: @user do |f| %>
+
+ <tr>
+      <th><%= f.label :icon_path ,"アイコン画像" %></th>
+      <td><%= f.file_field :avatar %></td> 
+      
+    </tr>
+
+    <tr>
+      <th><%= f.label :name ,"名前" %></th> 
+      <td><%= f.text_field :name %></td> 
+    </tr>
+
+    <tr>
+      <th><%= f.label :profile,"自己紹介" %></th> 
+      <td><%= f.text_field :profile %></td> 
+    </tr>
+    
+  
+  <div>
+    <ul>
+      <li><%= link_to :back do %>
+      <button>戻る</button>
+      <% end %></li>
+      <li><%= f.submit "保存" %></li>
+    </ul>
+  </div>
+<% end %>

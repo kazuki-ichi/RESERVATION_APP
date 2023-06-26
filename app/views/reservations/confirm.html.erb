@@ -1,0 +1,45 @@
+
+    <%= link_to :back do %>
+      <button>戻る</button>
+      <% end %>
+<h1>予約内容の確認</h1>
+<table>
+  <tr>
+    <th>チェックイン</th>
+    <td><%= @reservation. check_in.to_s(:datetime_jp) %></td> 
+  </tr>
+  <tr>
+    <th>チェックアウト</th>
+    <td><%= @reservation. rcheck_out.to_s(:datetime_jp) %></td> 
+  </tr>
+  <tr>
+    <th>日数</th>
+    <td><%= @reservation. days %></td> 
+  </tr>
+  <tr>
+    <th>人数</th>
+    <td><%= @reservation. count %></td> 
+  </tr>
+  <th>お支払い金額</th>
+    <td><%= @reservation. sum_of_reservation_price %></td> 
+  </tr>
+  
+
+</table>
+<%= form_for @reservation, method: :post, url: reservations_complete_path do |f| %>
+<%# ビューから見えなくする %>
+	<%= f.hidden_field :check_in %>
+  <%= f.hidden_field :rcheck_out %>
+  <%= f.hidden_field :count %>
+  <%= f.hidden_field :room_id %>
+  <%= f.hidden_field :user_id %>
+	<%= f.submit '予約を確定' %>
+<% end %>
+
+  <%= form_for @reservation, method: :post, url: reservations_back_path do |f| %>
+  <%= f.hidden_field :check_in %>
+  <%= f.hidden_field :rcheck_out %>
+  <%= f.hidden_field :count %>
+  <%= f.hidden_field :room_id %>
+  <%= f.submit 'キャンセル' %>
+<% end %>
