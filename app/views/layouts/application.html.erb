@@ -13,18 +13,11 @@
 
   <body>
   <header>
-
-    <h1 class="title"><%= link_to "Potepan Share", :root %></h1>
-
-<div class="btn-group">
-
-
-<% if user_signed_in? %>
-<%# 今オグインしているゆーざー %>
-  <%# <h4> メールアドレス： <%= current_user.email %> 
-  <%# <h4> ユーザーID: <%= current_user.id %> 
+  <h1 class="title"><%= link_to "Potepan Share", :root %></h1>
+  <div class="btn-group">
+  <% if user_signed_in? %>
     <button type="button" class="btn btn-primary dropdown-toggle icon_path" data-bs-toggle="dropdown" aria-expanded="false">
-    <% if current_user.avatar.attached? %>
+  <% if current_user.avatar.attached? %>
     <%= image_tag current_user.avatar %>
     <% end %>
     <%= current_user.name %>
@@ -37,10 +30,7 @@
     <li><%= link_to "ログアウト", destroy_user_session_path, method: :get %></li>
   </ul>
 </div>
-  <%# <%= link_to "ログアウト", destroy_user_session_path, method: :get %> <!-- ログアウトをする --> 
 <% else %>
-  <!-- ユーザーがログインしていなかった時の処理 -->
-  <%# <h2> 現在ログインしていません </h2> %>
   <div class="post">
   <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
   <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->

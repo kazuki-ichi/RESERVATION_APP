@@ -33,3 +33,8 @@ h3{
 .title a {
     text-decoration: none;
 }
+
+.Account_image img {
+    width: 150px;
+    object-fit: contain;
+}

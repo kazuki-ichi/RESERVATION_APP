@@ -12,20 +12,20 @@
     </tr>
   </thead>
 <tbody>
-    <% @reservations.each do |reservation| %>
-       <tr>
-          <td class ="reservation_path">
-          <% if reservation.room.image.attached? %>
-          <%= image_tag reservation.room.image %>
-          <% end %>
-          </td>
-          <td><%= reservation.room.name %></td>
-          <td><%= reservation.room.detail %></td>
-          <td><%= reservation.sum_of_reservation_price %> </td> 
-          <td><%= reservation.check_in.to_s(:datetime_jp) %></td>
-          <td><%= reservation.rcheck_out.to_s(:datetime_jp) %></td>
-          <td><%= reservation.created_at.to_s(:datetime_hour_jp) %></td>
-         </tr>
+  <% @reservations.each do |reservation| %>
+    <tr>
+      <td class ="reservation_path">
+      <% if reservation.room.image.attached? %>
+        <%= image_tag reservation.room.image %>
       <% end %>
+      </td>
+      <td><%= reservation.room.name %></td>
+      <td><%= reservation.room.detail %></td>
+      <td><%= reservation.sum_of_reservation_price %> </td> 
+      <td><%= reservation.check_in.to_s(:datetime_jp) %></td>
+      <td><%= reservation.rcheck_out.to_s(:datetime_jp) %></td>
+      <td><%= reservation.created_at.to_s(:datetime_hour_jp) %></td>
+    </tr>
+    <% end %>
    </tbody>
- </table>
+</table>

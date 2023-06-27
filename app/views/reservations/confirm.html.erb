@@ -1,7 +1,7 @@
 
-    <%= link_to :back do %>
-      <button>戻る</button>
-      <% end %>
+<%= link_to :back do %>
+  <button>戻る</button>
+<% end %>
 <h3>予約内容の確認</h3>
 <table>
   <tr>
@@ -23,11 +23,8 @@
   <th>お支払い金額</th>
     <td><%= @reservation. sum_of_reservation_price %></td> 
   </tr>
-  
-
 </table>
 <%= form_for @reservation, method: :post, url: reservations_complete_path do |f| %>
-<%# ビューから見えなくする %>
 	<%= f.hidden_field :check_in %>
   <%= f.hidden_field :rcheck_out %>
   <%= f.hidden_field :count %>
@@ -36,7 +33,7 @@
 	<%= f.submit '予約を確定' %>
 <% end %>
 
-  <%= form_for @reservation, method: :post, url: reservations_back_path do |f| %>
+<%= form_for @reservation, method: :post, url: reservations_back_path do |f| %>
   <%= f.hidden_field :check_in %>
   <%= f.hidden_field :rcheck_out %>
   <%= f.hidden_field :count %>
