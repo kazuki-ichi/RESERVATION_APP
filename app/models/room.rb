@@ -18,5 +18,8 @@ class Room < ApplicationRecord
     end
   end
 
-  
+  validates :name, presence: true
+  validates :detail, presence: true
+  validates :price, presence: true
+  validates :address, presence: true
 end

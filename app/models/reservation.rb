@@ -13,7 +13,7 @@ class Reservation < ApplicationRecord
         if check_in.nil? || rcheck_out.nil?
             return
         end
-        if rcheck_out < check_in
+        if rcheck_out <= check_in
             errors.add(:rcheck_out, "は開始日以前の日付は登録できません") 
         end
      end

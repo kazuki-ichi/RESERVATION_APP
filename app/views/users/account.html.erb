@@ -33,7 +33,7 @@
  <%= link_to "編集", :users_profileedit %>
         <label class="AccountInformation__label" for="image">アイコン画像</label>
 
-        <p class="AccountInformation__value AccountInformation__value--image">
+        <p class="AccountInformation__value Account_image">
           <% if current_user.avatar.attached? %>
           <%= image_tag current_user.avatar %>
           <% end %>

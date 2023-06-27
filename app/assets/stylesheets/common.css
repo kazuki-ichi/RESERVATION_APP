@@ -1,6 +1,6 @@
 header {
     background-color: aquamarine;
-    padding: 20px 20px;
+    padding: 10px 20px;
     display: flex;
 }
 
@@ -11,6 +11,9 @@ header {
 
 .btn-primary{
     margin-left: 1000px;
+}
+.post{
+    margin-left: 500px;  
 }
 
 h3{
@@ -25,4 +28,8 @@ h3{
 .room_path img{
     width: 150px;
     object-fit: contain;
+}
+
+.title a {
+    text-decoration: none;
 }

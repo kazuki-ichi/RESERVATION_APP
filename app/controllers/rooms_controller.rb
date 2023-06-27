@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(params.require(:room).permit(:name, :detail, :price, :image_path, :address, :user_id ,:content, :image))
-    pp @room
+  
     #roomのdbに保存します
     if @room.save
     

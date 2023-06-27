@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'users/account'
   get 'users/profileedit' 
   get 'rooms/search_result'
-  get'rooms/sach'
+  get 'rooms/sach'
+  root 'rooms#search_result'
   devise_for :users
   resources :users
   resources :reservations

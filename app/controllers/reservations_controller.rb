@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
   end
 
   def back
-    @room = Room.find(params[:id])
+    @room = Room.find(params[:reservation][:room_id])
 		@reservation = Reservation.new(@attr)
 		render  template: "rooms/show"
   end
