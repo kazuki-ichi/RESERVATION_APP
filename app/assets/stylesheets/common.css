@@ -1,4 +1,28 @@
 header {
     background-color: aquamarine;
-    padding: 10px 20px;
+    padding: 20px 20px;
+    display: flex;
+}
+
+.icon_path img{
+    width: 30px;
+    object-fit: contain;
+}
+
+.btn-primary{
+    margin-left: 1000px;
+}
+
+h3{
+    padding-top: 20px;
+}
+
+.reservation_path img{
+    width: 150px;
+    object-fit: contain;
+}
+
+.room_path img{
+    width: 150px;
+    object-fit: contain;
 }

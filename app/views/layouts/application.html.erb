@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -22,10 +23,14 @@
 <%# 今オグインしているゆーざー %>
   <%# <h4> メールアドレス： <%= current_user.email %> 
   <%# <h4> ユーザーID: <%= current_user.id %> 
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+
+    <button type="button" class="btn btn-primary dropdown-toggle icon_path" data-bs-toggle="dropdown" aria-expanded="false">
     <% if current_user.avatar.attached? %>
     <%= image_tag current_user.avatar %>
     <% end %>
+
+
     <%= current_user.name %>
   </button>
   <ul class="dropdown-menu">
