@@ -38,3 +38,8 @@ h3{
     width: 150px;
     object-fit: contain;
 }
+
+.room_image img{
+    width: 400px;
+    object-fit: contain;
+}
