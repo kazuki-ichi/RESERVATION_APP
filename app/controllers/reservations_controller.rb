@@ -1,5 +1,12 @@
 class ReservationsController < ApplicationController
   
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    flash[:notice] = "ユーザーを削除しました"
+    redirect_to :reservations_own
+  end
+
   def own
     @user = current_user
     @reservations = @user.reservations #リレーションを定義することでこのような記述が可能

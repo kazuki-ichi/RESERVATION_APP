@@ -1,4 +1,7 @@
 <h3>予約済み一覧</h3>
+<% if flash[:notice] %>
+   <p class="notice"><%= flash[:notice] %></p>
+<% end %>
 <table>
   <thead>
     <tr>
@@ -25,6 +28,7 @@
       <td><%= reservation.check_in.to_s(:datetime_jp) %></td>
       <td><%= reservation.rcheck_out.to_s(:datetime_jp) %></td>
       <td><%= reservation.created_at.to_s(:datetime_hour_jp) %></td>
+      <td><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
     </tr>
     <% end %>
    </tbody>
