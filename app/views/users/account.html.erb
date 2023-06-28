@@ -1,0 +1,63 @@
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">アカウント</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">プロフフィール</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+  
+  <h1>アカウント</h1>
+  <%= link_to "編集", :edit_user_registration %>
+  <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="email">メールアドレス</label>
+
+        <p class="AccountInformation__value">
+          <%= current_user.email %>
+        </p>
+      </div>
+
+      <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="password">パスワード</label>
+
+        <p class="AccountInformation__value">
+          *********
+        </p>
+      </div>
+    </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+  
+
+<div class="AccountInformation__input-group">
+ <%= link_to "編集", :users_profileedit %>
+        <label class="AccountInformation__label" for="image">アイコン画像</label>
+
+        <p class="AccountInformation__value Account_image">
+          <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="name">名前</label>
+
+        <p class="AccountInformation__value">
+           <%= current_user.name %>
+        </p>
+      </div>
+
+      <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="introduction">自己紹介</label>
+            
+        <p class="AccountInformation__value">
+          <%= current_user.profile %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+  </div>
+</div>

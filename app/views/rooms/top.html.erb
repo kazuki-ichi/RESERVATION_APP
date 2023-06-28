@@ -1,0 +1,27 @@
+<h1>まだ体験したことのない旅を</h1>
+
+<%= form_with model:@room, method: :get do |f| %>
+  <%= f.label :area ,"エリアを入力" %>
+  <%= f.text_field :area %>
+
+  <%= f.submit "検索" %>
+
+<% end %>
+
+<h1 class="area">おすすめエリア</h1>
+
+<div class="tokyo_image"> 東京
+  <%= link_to(image_tag("https://rails-02-sample.herokuapp.com/assets/home/recommend-area/tokyo.jpg"), rooms_search_result_path(area: "東京")) %>
+</div> 
+
+  <div class="osaka_image"> 大阪
+    <%= link_to(image_tag("https://rails-02-sample.herokuapp.com/assets/home/recommend-area/osaka.jpg"), rooms_search_result_path(area: "大阪")) %>
+  </div>
+
+<div class="kyoto_image"> 京都
+  <%= link_to(image_tag("https://rails-02-sample.herokuapp.com/assets/home/recommend-area/kyoto.jpg"), rooms_search_result_path(area: "京都")) %>
+</div>
+
+<div class="sapporo_image"> 札幌
+  <%= link_to(image_tag("https://rails-02-sample.herokuapp.com/assets/home/recommend-area/sapporo.jpg"), rooms_search_result_path(area: "札幌")) %>
+</div>

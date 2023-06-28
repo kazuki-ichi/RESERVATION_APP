@@ -1,0 +1,42 @@
+
+<%= form_with model:@room, method: :get do |f| %>
+  <%= f.label :area ,"エリアを入力" %>
+  <%= f.text_field :area %>
+
+  <%= f.label :keyword ,"キーワード名を入力" %>
+  <%= f.text_field :keyword %>
+  
+  <%= f.submit "検索" %>
+<% end %>
+
+<h3><%= @rooms.count('id') %>件見つかりました</h3>
+<table>
+  <thead>
+    <tr>
+      <th>画像</th>
+      <th>施設名</th>
+      <th>住所</th>
+      <th>紹介文</th>
+      <th>料金</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td class="room_path">
+          <% if room.image.attached? %>
+            <%= image_tag room.image %>
+          <% end %>
+        </td>
+        <td><%= link_to room.name, room_path(room) %></td>
+        <td><%= room.address  %></td>
+        <td><%= room.detail %></td>
+        <td><%= room.price %></td>
+        <td><%= link_to "詳細", room %></td>
+      </tr>
+          
+    <% end %>
+   </tbody>
+ </table>

@@ -1,0 +1,57 @@
+<div>
+  <%= link_to :back do %>
+    <button>戻る</button>
+  <% end %>
+ </div>
+
+<table>
+  <div class="room_image">
+    <% if @room.image.attached? %>
+        <%= image_tag @room.image %>
+    <% end %>
+  </div>
+  <tr>
+    <th>施設名</th>
+    <td><%= @room. name %></td>
+  </tr>
+   <tr>
+    <th>住所</th>
+    <td><%= @room. address %></td>
+  </tr>
+  <tr>
+    <th>料金</th>
+    <td><%= @room. price %></td>
+  </tr>
+  <tr>
+    <th>施設詳細</th>
+    <td><%= @room. detail %></td>
+  </tr>
+</table>
+
+<%= form_for @reservation, method: :post, url: reservations_confirm_path do |f| %>
+
+  <table>
+    <tr>
+      <th><%= f.label :check_in ,"チェックイン" %></th>
+      <td><%= f.date_field :check_in , id:"check-in-date"  %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :rcheck_out ,"チェックアウト" %></th>
+      <td><%= f.date_field :rcheck_out , id:"check-out-date" %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :count ,"人数" %></th>
+      <td><%= f.number_field :count, min: 1%></td>
+    </tr>
+  </table>
+  <%= f.hidden_field :room_id, :value => @room.id%>
+
+  <div>
+    <ul>
+      <%= f.submit '確認画面へ' %>
+    </ul>
+  </div>
+
+<% end %>

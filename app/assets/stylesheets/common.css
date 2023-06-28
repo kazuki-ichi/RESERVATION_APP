@@ -1,0 +1,73 @@
+header {
+    background-color: aquamarine;
+    padding: 10px 20px;
+    display: flex;
+}
+
+.icon_path img{
+    width: 30px;
+    object-fit: contain;
+}
+
+.btn-primary{
+    margin-left: 1000px;
+}
+.post{
+    margin-left: 500px;  
+}
+
+h3{
+    padding-top: 20px;
+}
+
+.reservation_path img{
+    width: 150px;
+    object-fit: contain;
+}
+
+.room_path img{
+    width: 150px;
+    object-fit: contain;
+}
+
+.title a {
+    text-decoration: none;
+}
+
+.Account_image img {
+    width: 150px;
+    object-fit: contain;
+}
+
+.room_image img{
+    width: 400px;
+    object-fit: contain;
+}
+
+.tokyo_image img{
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    object-fit: contain;
+}
+
+.osaka_image img{
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    /* object-fit: contain; */
+}
+
+.kyoto_image img{
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    /* object-fit: contain; */
+}
+
+.sapporo_image img{
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    /* object-fit: contain; */
+}
