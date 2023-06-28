@@ -2,6 +2,9 @@ document.addEventListener('turbolinks:load', () => {
     var checkInDateInput = document.getElementById('check-in-date');
     var checkOutDateInput = document.getElementById('check-out-date');
 
+    if (!checkInDateInput || !checkOutDateInput) {
+        return;
+    }
     // 今日の日付を取得
     const today = new Date();
 

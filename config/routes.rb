@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'rooms#search_result'
-
+  root 'rooms#top'
+  
   get 'users/account'
   get 'users/profileedit' 
-  
+  get 'rooms/top'
   get 'rooms/search_result'
   get 'rooms/own', to: 'rooms#own'
   

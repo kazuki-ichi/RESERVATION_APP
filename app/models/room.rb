@@ -11,6 +11,7 @@ class Room < ApplicationRecord
   validates :price, presence: true
   validates :address, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0 }
+  validates :price, numericality: { greater_than: 1 }
 
   def default_image
     if !self.image.attached?

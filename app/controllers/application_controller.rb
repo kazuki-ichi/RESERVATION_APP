@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
       rooms_search_result_path
     end
     def after_sign_out_path_for(resource_or_scope)
-        top_show_path
+      rooms_top_path
     end
 
 

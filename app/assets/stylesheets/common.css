@@ -43,3 +43,31 @@ h3{
     width: 400px;
     object-fit: contain;
 }
+
+.tokyo_image img{
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    object-fit: contain;
+}
+
+.osaka_image img{
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    /* object-fit: contain; */
+}
+
+.kyoto_image img{
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    /* object-fit: contain; */
+}
+
+.sapporo_image img{
+    width: 500px;
+    height: 400px;
+    padding: 50px;
+    /* object-fit: contain; */
+}

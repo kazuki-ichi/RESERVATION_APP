@@ -23,7 +23,8 @@ class ReservationsController < ApplicationController
 	end
 
   def complete
-    @reservation = Reservation.new(params.require(:reservation).permit(:check_in, :rcheck_out, :count, :room_id, :user_id,))
+    @reservation = Reservation.new(params.require(:reservation).permit(:check_in, :rcheck_out, :count, :room_id,))
+    @reservation[:user_id] = current_user.id
     @reservation.save
     redirect_to :reservations_own
 	end

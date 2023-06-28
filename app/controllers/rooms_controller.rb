@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:top, :show, :search_result]
+
   def new
     @room = Room.new
   end
@@ -30,6 +32,13 @@ class RoomsController < ApplicationController
       @rooms = Room.where("name like ? OR detail like ?", "%#{params[:keyword]}%", "%#{params[:keyword]}%")
     else 
      @rooms = Room.all
+    end
+  end
+
+  def top 
+    if !params[:area].nil?
+      @rooms = Room.where("address like ?", "%#{params[:area]}%")
+      render "search_result"
     end
   end
 
